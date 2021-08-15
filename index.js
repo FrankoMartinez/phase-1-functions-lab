@@ -19,13 +19,13 @@ function distanceTravelledInFeet(start, destination) {
 }
 
 function calculatesFarePrice(start, destination) {
-    if (destination < 400) {
+    if (distanceTravelledInFeet(start, destination) < 400) {
         return (destination - start) * 0;
-    } else if (destination > 400 && 2000 > destination) {
+    } else if (distanceTravelledInFeet(start, destination) > 400 && 2000 > distanceTravelledInFeet(start, destination)) {
         return ((264 * 2) - 400) * 0.02;
-    } else if (destination > 2000) {
+    } else if (distanceTravelledInFeet(start, destination) > 2000 && 2500 > distanceTravelledInFeet(start, destination)) {
         return 25;
-    } else if (destination > 2500) {
+    } else if (distanceTravelledInFeet(start, destination) > 2500) {console.log("Cannot travel that far")
         return "cannot travel that far"
-    }
+    } 
 }
